@@ -52,8 +52,12 @@ function! CtrlP_Statusline_Progress(...)
 endf
 
 " solarized theme
+syntax enable
+set t_Co=265
 set background=dark
-colorscheme base16-default
+" use folowing line only if terminal is not set to colors of solarize
+"let g:solarized_termcolors=256 
+colorscheme solarized
 
 " less screaming highlighting for matching parenthesis
 hi MatchParen term=underline
