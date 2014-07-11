@@ -21,7 +21,11 @@ set list
 let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,nbsp:\u00b7"
 
 " please!
-set clipboard=unnamed
+if has('unnamedplus')
+  set clipboard=unnamedplus
+else
+  set clipboard=unnamed
+endif
 
 " required for textobj-user-ruby
 runtime macros/matchit.vim
@@ -53,7 +57,7 @@ endf
 
 " ulitsnips
 "   Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-" let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 "   If you want :UltiSnipsEdit to split your window.
@@ -81,21 +85,15 @@ set number
 set nowrap
 set modeline
 
+" forces *.md as Markdown, instead of Modula-2
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
 " word completion with shift-tab
 imap <S-Tab> <C-N>
 
 " make Y consistend with C and D
 nnoremap Y y$
 
-" yeah, I learn the hard way
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 
 " this is a setting from Fritz. I don't know why I would want to hit F1 instead of Esc
 "" remap F1 key to Esc
@@ -108,8 +106,9 @@ nmap k gk
 
 " always getting these wrong ...
 cmap Q q
-" deacivated cause I can not write a capital W in search
-" cmap W w
+" disabled, as it wont let me write capitle W in search
+" also I'm not quite sure why I would need this
+" cmap W w 
 
 " " syntastic options
 " " let g:syntastic_ruby_checkers = ['mri']
