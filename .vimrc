@@ -79,6 +79,7 @@ set wildignore+=*.swp,.DS_Store
 set visualbell
 set number
 set nowrap
+set modeline
 
 " word completion with shift-tab
 imap <S-Tab> <C-N>
@@ -107,7 +108,8 @@ nmap k gk
 
 " always getting these wrong ...
 cmap Q q
-cmap W w
+" deacivated cause I can not write a capital W in search
+" cmap W w
 
 " " syntastic options
 " " let g:syntastic_ruby_checkers = ['mri']
