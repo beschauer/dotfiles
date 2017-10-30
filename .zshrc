@@ -8,7 +8,7 @@ source $HOME/.path
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="nick"
+ZSH_THEME="robbyrussell"
 
 # Z beats cd most of the time
 . ~/z/z.sh
@@ -70,3 +70,6 @@ source $ZSH/oh-my-zsh.sh
 # npm tab completion
 . <(npm completion)
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
