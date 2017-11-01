@@ -8,7 +8,8 @@ source $HOME/.path
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="eastwood"
+# ZSH_THEME="random"
 
 # Z beats cd most of the time
 . ~/z/z.sh
