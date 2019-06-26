@@ -79,6 +79,11 @@ let g:ctrlp_custom_ignore = { 'dir': '\v[\/](\.git)$', 'file': '\v\.swp$' }
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_open_multiple_files = 'tr'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\(plattforms|plugins)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 
 " see https://gist.github.com/1610859
 let g:ctrlp_status_func = {
@@ -96,20 +101,14 @@ function! CtrlP_Statusline_Progress(...)
   retu len.dir
 endf
 
-" ulitsnips
-"   Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-"   If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
 
 " solarized theme
 syntax enable
 set t_Co=265
+"set termguicolors
 set background=dark
 " use folowing line only if terminal is not set to colors of solarize
-"let g:solarized_termcolors=256 
+" let g:solarized_termcolors=256 
 colorscheme solarized
 
 " less screaming highlighting for matching parenthesis
@@ -123,7 +122,11 @@ set wildmode=list:longest
 set wildignore+=*.swp,.DS_Store
 set visualbell
 set number
-set nowrap
+" set nowrap " To display long lines as just one line (i.e. you have to scroll horizontally to see the entire line). 
+set wrap
+set showbreak=»
+set linebreak
+
 set modeline
 
 " forces *.md as Markdown, instead of Modula-2
@@ -151,12 +154,20 @@ cmap Q q
 " also I'm not quite sure why I would need this
 " cmap W w 
 
+
 " " syntastic options
 " " let g:syntastic_ruby_checkers = ['mri']
 " " let g:syntastic_ruby_mri_exec = '~/.rbenv/shims/ruby'
 " " let g:syntastic_debug = 1
 " " let g:syntastic_debug_file = '~/syntastic.log'
 " let g:syntastic_check_on_open = 1
+
+let g:syntastic_javascript_checkers = ['eslint'] "Use eslint for syntax checking
+" Point syntastic checker at locally installed `eslint` if it exists.
+if executable('node_modules/.bin/eslint')
+  let b:syntastic_javascript_eslint_exec = 'node_modules/.bin/eslint'
+endif
+
 
 " " syntastic signs and colors
 " let g:syntastic_error_symbol = 'e'
@@ -186,3 +197,14 @@ if has("gui_macvim")
   set showtabline=2
   set guifont=Menlo:h15
 endif
+
+
+" """"""""""""""""""
+" settings for coc
+" """"""""""""""""""
+
+" Use <Tab> and <S-Tab> for navigate completion list:
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+
