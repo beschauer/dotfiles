@@ -2,5 +2,10 @@
 --ignore-dir=tmp
 --ignore-dir=vendor
 --ignore-dir=public/generated
+--ignore-dir=platforms
+--ignore-dir=plugins
+--ignore-dir=target
+--ignore-dir=.idea
+--ignore-dir=bower_components
 --sort-files
 --smart-case
