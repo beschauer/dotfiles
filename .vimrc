@@ -1,4 +1,45 @@
-execute pathogen#infect()
+"""""""""""""""""
+" vim-plug plugin management
+"""""""""""""""""
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+Plug 'https://github.com/tpope/vim-sensible.git'
+Plug 'https://github.com/groenewege/vim-less.git'
+Plug 'https://github.com/kana/vim-textobj-user.git'
+Plug 'https://github.com/kien/ctrlp.vim.git'
+Plug 'https://github.com/tpope/vim-surround.git'
+Plug 'https://github.com/tpope/vim-repeat.git'
+Plug 'https://github.com/tpope/vim-commentary.git'
+Plug 'https://github.com/tpope/vim-eunuch.git'
+Plug 'https://github.com/tpope/vim-sleuth.git'
+Plug 'https://github.com/tpope/vim-endwise.git'
+Plug 'https://github.com/tpope/vim-fugitive.git'
+Plug 'https://github.com/mattn/emmet-vim.git'
+Plug 'https://github.com/tpope/vim-vinegar.git'
+Plug 'https://github.com/vim-scripts/closetag.vim.git'
+Plug 'https://github.com/tpope/vim-abolish.git'
+Plug 'https://github.com/altercation/vim-colors-solarized.git'
+Plug 'https://github.com/othree/javascript-libraries-syntax.vim.git'
+Plug 'https://github.com/airblade/vim-gitgutter.git'
+Plug 'https://github.com/scrooloose/syntastic.git'
+Plug 'https://github.com/honza/vim-snippets.git'
+Plug 'https://github.com/derekwyatt/vim-scala.git'
+Plug 'https://github.com/mileszs/ack.vim.git'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
+"""""""""""""""""
+" end of plugin management
+"""""""""""""""""
+
 
 " default tab/indentation
 set expandtab
