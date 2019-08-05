@@ -12,7 +12,7 @@ ZSH_THEME="eastwood"
 # ZSH_THEME="random"
 
 # Z beats cd most of the time
-. ~/z/z.sh
+# . ~/z/z.sh
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -30,7 +30,7 @@ ZSH_THEME="eastwood"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+#ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -41,7 +41,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(fabric brew node npm history git-flow vagrant zsh-syntax-highlighting docker)
+plugins=(fabric brew node npm history git-flow vagrant docker z)
 
 # User configuration
 
@@ -51,9 +51,9 @@ for file in $HOME/.{exports,aliases,functions,extra}; do
 done;
 unset file;
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-  . `brew --prefix`/etc/bash_completion
-fi
+# if [ -f `brew --prefix`/etc/bash_completion ]; then
+#   . `brew --prefix`/etc/bash_completion
+# fi
 
 # Automatically list directory contents on `cd`.
 # auto-ls () {
