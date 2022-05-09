@@ -6,6 +6,7 @@
 	s = status -s
 	df = diff --color --color-words --abbrev
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	cleanup = "!git fetch --prune && git branch --color=never -vv | grep ': gone] ' | awk '{print $1}' | xargs git branch -D"
 [color]
 	ui = always
 [core]
