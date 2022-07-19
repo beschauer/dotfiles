@@ -11,20 +11,18 @@ brew install caskroom/cask/brew-cask
 # brew tap caskroom/versions
 
 # daily
-brew cask install spectacle
-brew cask install nightowl
+brew install --cask rectangle
 
 # dev
-brew cask install iterm2
+brew install --cask iterm2
 
 # browsers
-brew cask install google-chrome
-brew cask install firefox
+brew install --cask google-chrome
+brew install --cask firefox
 
 
 # misc
-brew cask install keka
-brew cask install evernote
+brew install --cask keka
 
 
 # Not on cask but I want regardless.
