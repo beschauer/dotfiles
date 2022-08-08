@@ -12,6 +12,7 @@ brew install caskroom/cask/brew-cask
 
 # daily
 brew install --cask rectangle
+brew install --cask karabiner-elements
 
 # dev
 brew install --cask iterm2
