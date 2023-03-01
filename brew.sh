@@ -30,8 +30,6 @@ brew install homebrew/completions/brew-cask-completion
 brew install wget --with-iri
 
 # Install more recent versions of some OS X tools
-brew install vim --with-override-system-vi
-brew install macvim
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
@@ -53,7 +51,7 @@ brew install fzf
 
 brew install git
 brew install imagemagick --with-webp
-brew install node # This installs `npm` too using the recommended installation method
+brew install fnm
 brew install rename
 brew install tree
 brew install ffmpeg --with-libvpx
@@ -65,6 +63,12 @@ brew install pidcat   # colored logcat guy
 brew install zsh
 
 brew install ack
+
+brew install nvim
+
+brew install flyway
+
+brew install gh
 
 # Remove outdated versions from the cellar
 brew cleanup

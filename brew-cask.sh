@@ -16,6 +16,7 @@ brew install --cask karabiner-elements
 
 # dev
 brew install --cask iterm2
+brew install --cask kube-forwarder
 
 # browsers
 brew install --cask google-chrome
