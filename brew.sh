@@ -59,16 +59,13 @@ brew install ffmpeg --with-libvpx
 brew install terminal-notifier
 
 brew install pidcat   # colored logcat guy
-
 brew install zsh
-
 brew install ack
-
 brew install nvim
-
 brew install flyway
-
 brew install gh
+brew install yq
+brew install jq
 
 # Remove outdated versions from the cellar
 brew cleanup
