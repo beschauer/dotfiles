@@ -66,6 +66,7 @@ brew install flyway
 brew install gh
 brew install yq
 brew install jq
+brew install k9s
 
 # Remove outdated versions from the cellar
 brew cleanup
